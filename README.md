@@ -1,59 +1,85 @@
 # DeskHelpFront
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
+## 📋 Tecnologias
 
-## Development server
+- **Angular 20**
+- **Node.js 22**
+- **Angular Material** (UI Components)
+- **RxJS** (Programação reativa)
+- **NgRx** (Opcional - State Management)
+- **ESLint** + **Prettier** (Padronização)
 
-To start a local development server, run:
+## ⚙️ Configuração do Ambiente
 
+### Pré-requisitos
+- Node.js 22.x
+- npm 10+ ou yarn 1.22+
+- Angular CLI 20+
+
+### Instalação
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/EmersonBranch/desk-help-front.git
+   ```
+2. Instale dependências:
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
+
+3. Configure a API:
+   - Altere `environment.ts` com a URL do backend
+
+4. Execute a aplicação:
+   ```bash
+   ng serve
+   ```
+   Acesse: `http://localhost:4200`
+
+## 🏗️ Estrutura do Projeto
+```
+src/
+├── app/
+│   ├── core/           # Serviços globais
+│   ├── modules/        # Feature modules
+│   ├── shared/         # Componentes compartilhados
+│   ├── assets/         # Imagens/fontes
+│   ├── styles/         # CSS global
+│   └── app.component.ts
+├── environments/       # Configurações por ambiente
+└── ...
+```
+
+## 🛠️ Comandos Úteis
 ```bash
+# Rodar em modo desenvolvimento
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+# Build para produção
+ng build --configuration=production
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
+# Rodar testes unitários
 ng test
+
+# Lint do projeto
+ng lint
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+## 🌐 Configuração de Proxy
+Para evitar CORS durante o desenvolvimento, configure `proxy.conf.json`:
+```json
+{
+  "/api": {
+    "target": "http://localhost:8080",
+    "secure": false
+  }
+}
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🤝 Contribuição
+Siga o fluxo Git:
+1. Branchs devem ser criadas a partir de `prod`
+2. Push inicial para `dev`
+3. PRs devem ser abertos para `stage`
+```
